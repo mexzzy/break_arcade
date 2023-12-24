@@ -1,3 +1,4 @@
+import 'package:break_arcade/auth/components/button.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,7 @@ class LoginScreen extends StatelessWidget {
                 child: TextFormField(
                   style: const TextStyle(color: AppColors.white),
                   decoration: const InputDecoration(
-                    hintText: 'Enter your email',
+                    hintText: 'username',
                     hintStyle: TextStyle(
                       color: AppColors.grayText,
                     ),
@@ -94,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                 child: TextFormField(
                   style: const TextStyle(color: AppColors.white),
                   decoration: const InputDecoration(
-                    hintText: 'Enter your email',
+                    hintText: 'password',
                     hintStyle: TextStyle(
                       color: AppColors.grayText,
                     ),
@@ -109,6 +110,13 @@ class LoginScreen extends StatelessWidget {
                   //   return null;
                   // },
                 ),
+              ),
+              const SizedBox(height: 20),
+              CustomButton(
+                text: 'Sign in',
+                onPressed: () {
+                  print('Button Clicked!');
+                },
               ),
             ],
           ),
