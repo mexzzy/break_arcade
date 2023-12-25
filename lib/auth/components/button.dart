@@ -31,14 +31,13 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(
-            top: 10,
-            bottom: 10,
+          padding: const EdgeInsets.symmetric(
+            vertical: 16,
           ),
           child: Text(
             text,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: FontWeight.w500,
             ),
           ),
