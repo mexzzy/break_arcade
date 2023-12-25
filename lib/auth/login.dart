@@ -2,6 +2,7 @@ import 'package:break_arcade/auth/components/button.dart';
 import 'package:break_arcade/auth/signUp.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -193,11 +194,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 30),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignUpScreen(),
-                      ),
+                    Get.to(
+                      () => const SignUpScreen(),
+                      transition: Transition.topLevel,
+                      duration: const Duration(seconds: 1),
                     );
                   },
                   child: const Row(

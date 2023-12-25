@@ -1,5 +1,6 @@
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Input extends StatelessWidget {
   const Input({Key? key});
@@ -19,6 +20,15 @@ class Input extends StatelessWidget {
       ),
       child: Center(
         child: TextFormField(
+          onChanged: (value) {
+            if (value.length == 1) {
+              FocusScope.of(context).nextFocus();
+            }
+          },
+          inputFormatters: [
+            LengthLimitingTextInputFormatter(1),
+            FilteringTextInputFormatter.digitsOnly,
+          ],
           controller: controller,
           maxLength: 1,
           keyboardType: TextInputType.number,

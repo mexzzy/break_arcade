@@ -14,6 +14,16 @@ class _EmailVerificationState extends State<EmailVerification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        foregroundColor: AppColors.white,
+        backgroundColor: AppColors.primaryBg,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Container(
         color: AppColors.primaryBg,
         child: Center(
@@ -21,9 +31,9 @@ class _EmailVerificationState extends State<EmailVerification> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/breakArcade_logo.png',
-                height: 50,
-                width: 50,
+                'assets/mail_open_outline_filled.png',
+                height: 70,
+                width: 70,
                 fit: BoxFit.cover,
               ),
               const Padding(
@@ -42,9 +52,10 @@ class _EmailVerificationState extends State<EmailVerification> {
                 child: Text(
                   'samuelmeshach055@gmail.com',
                   style: TextStyle(
-                      fontSize: 16,
-                      color: AppColors.white,
-                      fontWeight: FontWeight.w500),
+                    fontSize: 16,
+                    color: AppColors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
               const Text(
@@ -73,6 +84,26 @@ class _EmailVerificationState extends State<EmailVerification> {
                 onPressed: () {
                   print('confirm Button Clicked!');
                 },
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  print("RE-Sending code");
+                },
+                child: SizedBox(
+                  width: 8.0 * MediaQuery.of(context).size.width,
+                  child: const Text(
+                    'Resend Code',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
