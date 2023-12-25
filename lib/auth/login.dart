@@ -1,4 +1,5 @@
 import 'package:break_arcade/auth/components/button.dart';
+import 'package:break_arcade/auth/signUp.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -190,21 +191,31 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 const SizedBox(height: 30),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Not a member ?",
-                      style: TextStyle(color: AppColors.grayText),
-                    ),
-                    Text(
-                      " Register now",
-                      style: TextStyle(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w500,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(),
                       ),
-                    ),
-                  ],
+                    );
+                  },
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Not a member ?",
+                        style: TextStyle(color: AppColors.grayText),
+                      ),
+                      Text(
+                        " Register now",
+                        style: TextStyle(
+                          color: AppColors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
