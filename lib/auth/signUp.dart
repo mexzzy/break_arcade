@@ -147,7 +147,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 const SizedBox(height: 20),
                 CustomButton(
-                  text: 'Sign in',
+                  text: 'Sign up',
                   onPressed: () {
                     print('Button Clicked!');
                   },
