@@ -1,7 +1,10 @@
 import 'package:break_arcade/auth/components/button.dart';
+import 'package:break_arcade/auth/email_verify.dart';
 import 'package:break_arcade/auth/login.dart';
+import 'package:break_arcade/components/pending.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -149,10 +152,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 CustomButton(
                   text: 'Sign up',
                   onPressed: () {
-                    print('Button Clicked!');
+                    print('navigate to EmailVerification');
                   },
+                  onTapPage: const EmailVerification(),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(
+                  height: 40,
+                ),
                 Stack(
                   alignment: Alignment.center,
                   children: [
@@ -184,11 +190,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/logos_google.png',
-                      height: 40,
-                      width: 40,
-                      fit: BoxFit.cover,
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(
+                          () => const Pending(),
+                          transition: Transition.topLevel,
+                          duration: const Duration(seconds: 1),
+                        );
+                      },
+                      child: Image.asset(
+                        'assets/logos_google.png',
+                        height: 40,
+                        width: 40,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     const SizedBox(width: 20),
                     Image.asset(
@@ -209,11 +224,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(height: 30),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
+                    Get.to(
+                      () => const LoginScreen(),
+                      transition: Transition.topLevel,
+                      duration: const Duration(seconds: 1),
                     );
                   },
                   child: const Row(
