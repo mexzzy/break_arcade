@@ -135,19 +135,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 0.8 * MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.only(
-                    top: 10,
-                  ),
-                  child: const Text(
-                    'Forgot password?',
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                      color: AppColors.grayText,
-                    ),
-                  ),
-                ),
                 const SizedBox(height: 20),
                 CustomButton(
                   text: 'Sign up',

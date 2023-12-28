@@ -8,7 +8,7 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final double borderRadius;
-  final Widget? onTapPage; // Use Widget instead of PageRoute
+  final Widget? onTapPage;
 
   const CustomButton({
     Key? key,
