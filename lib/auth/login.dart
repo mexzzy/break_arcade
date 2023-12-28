@@ -1,5 +1,6 @@
 import 'package:break_arcade/auth/components/button.dart';
 import 'package:break_arcade/auth/signUp.dart';
+import 'package:break_arcade/components/main_screen.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -136,6 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     print('Button Clicked!');
                   },
+                  onTapPage: const MainScreen(),
                 ),
                 const SizedBox(height: 40),
                 Stack(
