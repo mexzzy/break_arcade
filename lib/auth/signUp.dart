@@ -14,7 +14,8 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  bool _obscureText = true;
+  bool _obscurePasswordText = true;
+  bool _obscureConfirmPasswordText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   child: TextFormField(
-                    obscureText: _obscureText,
+                    obscureText: _obscurePasswordText,
                     style: const TextStyle(color: AppColors.white),
                     decoration: InputDecoration(
                       hintText: 'password',
@@ -121,14 +122,55 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       border: InputBorder.none,
                       suffixIcon: IconButton(
                         icon: Icon(
-                          _obscureText
+                          _obscurePasswordText
                               ? Icons.visibility
                               : Icons.visibility_off,
                           color: AppColors.grayText,
                         ),
                         onPressed: () {
                           setState(() {
-                            _obscureText = !_obscureText;
+                            _obscurePasswordText = !_obscurePasswordText;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  width: 0.8 * MediaQuery.of(context).size.width,
+                  padding: const EdgeInsets.only(
+                    top: 5,
+                    right: 10,
+                    left: 20,
+                    bottom: 5,
+                  ),
+                  decoration: const BoxDecoration(
+                    color: AppColors.inputBg,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                  child: TextFormField(
+                    obscureText: _obscureConfirmPasswordText,
+                    style: const TextStyle(color: AppColors.white),
+                    decoration: InputDecoration(
+                      hintText: 'confirm password',
+                      hintStyle: const TextStyle(
+                        color: AppColors.grayText,
+                      ),
+                      border: InputBorder.none,
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscureConfirmPasswordText
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: AppColors.grayText,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscureConfirmPasswordText =
+                                !_obscureConfirmPasswordText;
                           });
                         },
                       ),

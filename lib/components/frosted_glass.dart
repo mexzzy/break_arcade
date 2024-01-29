@@ -11,10 +11,10 @@ class FrostedGlass extends StatelessWidget {
     this.thePadding,
   });
 
-  final theWidth;
-  final theHeight;
-  final theChild;
-  final thePadding;
+  final dynamic theWidth;
+  final dynamic theHeight;
+  final dynamic theChild;
+  final dynamic thePadding;
 
   @override
   Widget build(BuildContext context) {

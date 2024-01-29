@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class Input extends StatelessWidget {
-  const Input({Key? key}) : super(key: key);
+  const Input({Key? key});
 
   @override
   Widget build(BuildContext context) {

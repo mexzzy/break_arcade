@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:break_arcade/auth/components/button.dart';
 import 'package:break_arcade/auth/components/inputs.dart';
 import 'package:break_arcade/constants/app_colors.dart';
