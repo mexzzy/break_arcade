@@ -1,4 +1,3 @@
-import 'package:break_arcade/components/frosted_glass.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -25,12 +24,16 @@ class HomeScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: const Center(
-              child: Text(
-                "testing",
-                style: TextStyle(
-                  fontSize: 30,
-                ),
+            child: Container(
+              alignment: Alignment.topRight,
+              margin: const EdgeInsets.only(
+                top: 45,
+                right: 20,
+              ),
+              child: const Icon(
+                Icons.settings,
+                color: AppColors.white,
+                size: 30,
               ),
             ),
           ),
@@ -42,19 +45,30 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FrostedGlass(
-                  thePadding: const EdgeInsets.only(
+                Container(
+                  padding: const EdgeInsets.only(
                     top: 2,
                     bottom: 2,
                     right: 10,
                     left: 5,
                   ),
-                  theWidth: 140,
-                  theChild: Row(
+                  width: 140,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF000000).withOpacity(
+                      0.25,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                      10,
+                    ),
+                    border: Border.all(
+                      color: AppColors.grayText,
+                    ),
+                  ),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Image.asset(
-                        "assets/trophy_profile.png",
+                        "assets/medal_profile.png",
                         width: 50,
                         height: 50,
                         fit: BoxFit.cover,
@@ -82,9 +96,14 @@ class HomeScreen extends StatelessWidget {
                   ),
                   width: 140,
                   decoration: BoxDecoration(
-                    color: Colors.redAccent,
+                    color: const Color(0xFF000000).withOpacity(
+                      0.25,
+                    ),
                     borderRadius: BorderRadius.circular(
                       10,
+                    ),
+                    border: Border.all(
+                      color: AppColors.grayText,
                     ),
                   ),
                   child: Row(
