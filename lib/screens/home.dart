@@ -1,3 +1,4 @@
+import 'package:break_arcade/components/frosted_glass.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -9,62 +10,74 @@ class HomeScreen extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       color: AppColors.primaryBg,
-      child: Stack(
+      child: Column(
         children: [
           Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height / 2.2,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
-              ),
-              image: DecorationImage(
-                image: AssetImage("assets/profile_backdrop.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Container(
-              alignment: Alignment.topRight,
-              margin: const EdgeInsets.only(
-                top: 45,
-                right: 20,
-              ),
-              child: const Icon(
-                Icons.settings,
-                color: AppColors.white,
-                size: 30,
-              ),
+            child: Stack(
+              children: [
+                Image.asset(
+                  "assets/profile_backdrop.png",
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.black.withOpacity(0.5),
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
+                  ),
+                  child: const Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // Image.asset(
+                        //   "assets/profile_backdrop.png",
+                        //   height: 100,
+                        //   width: 100,
+                        //   fit: BoxFit.cover,
+                        // ),
+                        Text(
+                          "Samuel Meshach",
+                          style: TextStyle(
+                            color: AppColors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                      ],
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  top: 30,
+                  right: 10,
+                  child: Icon(
+                    Icons.settings,
+                    color: AppColors.white,
+                    size: 30,
+                  ),
+                )
+              ],
             ),
           ),
-          Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            height: MediaQuery.of(context).size.height / 1.05,
+          Transform.translate(
+            offset: const Offset(0, -30),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  padding: const EdgeInsets.only(
-                    top: 2,
-                    bottom: 2,
-                    right: 10,
-                    left: 5,
-                  ),
-                  width: 140,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF000000).withOpacity(
-                      0.25,
-                    ),
-                    borderRadius: BorderRadius.circular(
-                      10,
-                    ),
-                    border: Border.all(
-                      color: AppColors.grayText,
-                    ),
-                  ),
-                  child: Row(
+                FrostedGlass(
+                  theWidth: 140,
+                  thePadding:
+                      const EdgeInsets.only(top: 10, right: 10, left: 5),
+                  theChild: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Image.asset(
@@ -74,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                       const Text(
-                        "80 / 80",
+                        "80/80",
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w400,
@@ -84,29 +97,10 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    top: 2,
-                    bottom: 2,
-                    right: 10,
-                    left: 5,
-                  ),
-                  width: 140,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF000000).withOpacity(
-                      0.25,
-                    ),
-                    borderRadius: BorderRadius.circular(
-                      10,
-                    ),
-                    border: Border.all(
-                      color: AppColors.grayText,
-                    ),
-                  ),
-                  child: Row(
+                FrostedGlass(
+                  theWidth: 140,
+                  thePadding: const EdgeInsets.only(top: 10, right: 10),
+                  theChild: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Image.asset(

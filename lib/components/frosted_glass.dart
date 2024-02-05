@@ -11,7 +11,7 @@ class FrostedGlass extends StatelessWidget {
     this.thePadding,
   });
 
-  final dynamic theWidth;
+  final double theWidth;
   final dynamic theHeight;
   final dynamic theChild;
   final dynamic thePadding;
@@ -37,11 +37,6 @@ class FrostedGlass extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                  color: AppColors.white.withOpacity(
-                    0.13,
-                  ),
-                ),
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomRight,
