@@ -1,9 +1,9 @@
 import 'package:break_arcade/constants/app_colors.dart';
-import 'package:break_arcade/screens/friends.dart';
-import 'package:break_arcade/screens/games.dart';
-import 'package:break_arcade/screens/home.dart';
-import 'package:break_arcade/screens/notification.dart';
-import 'package:break_arcade/screens/ranking.dart';
+import 'package:break_arcade/screens/Friends/friends.dart';
+import 'package:break_arcade/screens/Games/games.dart';
+import 'package:break_arcade/screens/Home/home.dart';
+import 'package:break_arcade/screens/Notification/notification.dart';
+import 'package:break_arcade/screens/Ranking/ranking.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {

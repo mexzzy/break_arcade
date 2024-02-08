@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
       color: AppColors.primaryBg,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height / 2.2,
             child: Stack(
@@ -33,17 +33,18 @@ class HomeScreen extends StatelessWidget {
                       bottomRight: Radius.circular(20),
                     ),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Image.asset(
-                        //   "assets/profile_backdrop.png",
-                        //   height: 100,
-                        //   width: 100,
-                        //   fit: BoxFit.cover,
-                        // ),
-                        Text(
+                        Image.asset(
+                          "assets/userAvatar.png",
+                          width: 200,
+                          height: 200,
+                          fit: BoxFit.cover,
+                          
+                        ),
+                        const Text(
                           "Samuel Meshach",
                           style: TextStyle(
                             color: AppColors.white,
@@ -51,7 +52,6 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 10),
                       ],
                     ),
                   ),
@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                     color: AppColors.white,
                     size: 30,
                   ),
-                )
+                ),
               ],
             ),
           ),

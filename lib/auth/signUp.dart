@@ -62,6 +62,32 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: TextFormField(
                     style: const TextStyle(color: AppColors.white),
                     decoration: const InputDecoration(
+                      hintText: 'fullname',
+                      hintStyle: TextStyle(
+                        color: AppColors.grayText,
+                      ),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Container(
+                  width: 0.8 * MediaQuery.of(context).size.width,
+                  padding: const EdgeInsets.only(
+                    top: 5,
+                    right: 20,
+                    left: 20,
+                    bottom: 5,
+                  ),
+                  decoration: const BoxDecoration(
+                    color: AppColors.inputBg,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                  child: TextFormField(
+                    style: const TextStyle(color: AppColors.white),
+                    decoration: const InputDecoration(
                       hintText: 'username',
                       hintStyle: TextStyle(
                         color: AppColors.grayText,

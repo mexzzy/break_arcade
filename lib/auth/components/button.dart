@@ -11,14 +11,14 @@ class CustomButton extends StatelessWidget {
   final Widget? onTapPage;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.color = AppColors.primaryBlue,
     this.textColor = AppColors.white,
     this.borderRadius = 10.0,
     this.onTapPage,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
