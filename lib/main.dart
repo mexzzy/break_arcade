@@ -11,10 +11,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      title: 'Break Arcade',
-      debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+    return GestureDetector(
+      onTap: () {
+        _handleTap(context);
+      },
+      child: const GetMaterialApp(
+        title: 'Break Arcade',
+        debugShowCheckedModeBanner: false,
+        home: LoginScreen(),
+      ),
     );
+  }
+
+  void _handleTap(BuildContext context) {
+    FocusScope.of(context).unfocus();
   }
 }
