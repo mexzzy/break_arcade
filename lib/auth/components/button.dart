@@ -1,5 +1,6 @@
-import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:break_arcade/constants/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -7,22 +8,33 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final double borderRadius;
+  final Widget? onTapPage;
 
   const CustomButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.color = AppColors.primaryBlue,
     this.textColor = AppColors.white,
     this.borderRadius = 10.0,
-  }) : super(key: key);
+    this.onTapPage,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 0.8 * MediaQuery.of(context).size.width,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: () {
+          if (onTapPage != null) {
+            Get.to(
+              () => onTapPage!,
+              transition: Transition.rightToLeft,
+            );
+          } else {
+            onPressed();
+          }
+        },
         style: ElevatedButton.styleFrom(
           foregroundColor: textColor,
           backgroundColor: color,
@@ -31,14 +43,13 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(
-            top: 10,
-            bottom: 10,
+          padding: const EdgeInsets.symmetric(
+            vertical: 13,
           ),
           child: Text(
             text,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: FontWeight.w500,
             ),
           ),
