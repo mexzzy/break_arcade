@@ -22,8 +22,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-
-  void _handleTap(BuildContext context) {
-    FocusScope.of(context).unfocus();
-  }
 }
