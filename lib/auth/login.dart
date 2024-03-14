@@ -1,12 +1,13 @@
 import 'package:break_arcade/auth/components/button.dart';
+import 'package:break_arcade/auth/components/social_icon.dart';
+import 'package:break_arcade/components/pending.dart';
 import 'package:break_arcade/auth/signUp.dart';
 import 'package:break_arcade/components/main_screen.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key});
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -70,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: TextFormField(
                     style: const TextStyle(color: AppColors.white),
                     decoration: const InputDecoration(
-                      hintText: 'username',
+                      hintText: 'email',
                       hintStyle: TextStyle(
                         color: AppColors.grayText,
                       ),
@@ -135,9 +136,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomButton(
                   text: 'Sign in',
                   onPressed: () {
-                    print('Button Clicked!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainScreen(),
+                      ),
+                    );
                   },
-                  onTapPage: const MainScreen(),
                 ),
                 const SizedBox(height: 40),
                 Stack(
@@ -171,35 +176,51 @@ class _LoginScreenState extends State<LoginScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'assets/logos_google.png',
-                      height: 40,
-                      width: 40,
-                      fit: BoxFit.cover,
+                    SocialIcon(
+                      icon: 'assets/logos_google.png',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Pending(),
+                          ),
+                        );
+                      },
                     ),
                     const SizedBox(width: 20),
-                    Image.asset(
-                      'assets/logos_facebook.png',
-                      height: 40,
-                      width: 40,
-                      fit: BoxFit.cover,
+                    SocialIcon(
+                      icon: 'assets/logos_facebook.png',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Pending(),
+                          ),
+                        );
+                      },
                     ),
                     const SizedBox(width: 20),
-                    Image.asset(
-                      'assets/green_logo.png',
-                      height: 40,
-                      width: 40,
-                      fit: BoxFit.cover,
-                    )
+                    SocialIcon(
+                      icon: 'assets/green_logo.png',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Pending(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
                 const SizedBox(height: 30),
                 GestureDetector(
                   onTap: () {
-                    Get.to(
-                      () => const SignUpScreen(),
-                      transition: Transition.topLevel,
-                      duration: const Duration(seconds: 1),
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(),
+                      ),
                     );
                   },
                   child: const Row(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -8,7 +7,6 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final Color textColor;
   final double borderRadius;
-  final Widget? onTapPage;
 
   const CustomButton({
     super.key,
@@ -17,7 +15,6 @@ class CustomButton extends StatelessWidget {
     this.color = AppColors.primaryBlue,
     this.textColor = AppColors.white,
     this.borderRadius = 10.0,
-    this.onTapPage,
   });
 
   @override
@@ -25,16 +22,7 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       width: 0.8 * MediaQuery.of(context).size.width,
       child: ElevatedButton(
-        onPressed: () {
-          if (onTapPage != null) {
-            Get.to(
-              () => onTapPage!,
-              transition: Transition.rightToLeft,
-            );
-          } else {
-            onPressed();
-          }
-        },
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           foregroundColor: textColor,
           backgroundColor: color,
