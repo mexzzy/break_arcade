@@ -1,3 +1,4 @@
+import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class GamesScreen extends StatelessWidget {
@@ -5,6 +6,23 @@ class GamesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center( child: Text("games"),);
+    return Scaffold(
+      backgroundColor: AppColors.primaryBg,
+      appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        title: const Text(
+          "Games",
+          style: TextStyle(
+            color: AppColors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: Container(
+        child: Text("game"),
+      ),
+    );
   }
 }

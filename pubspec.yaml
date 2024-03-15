@@ -73,9 +73,12 @@ flutter:
     - assets/medal_profile.png
     - assets/userAvatar.png
     - assets/amongUs.jpeg
+    - assets/emailSent.jpeg
     - assets/rangnarok.jpeg
     - assets/smashHit.jpg
     - assets/snakeGame.png
+    - assets/empty.webp
+    - assets/default_profile_photo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

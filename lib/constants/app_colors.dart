@@ -6,6 +6,7 @@ class AppColors {
   static const Color primaryBlueD1 = Color(0x6C063FA8);
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0x00000000);
-  static const Color grayText = Color.fromRGBO(255, 255, 255, 0.50);
-  static const Color inputBg = Color.fromRGBO(255, 255, 255, 0.05);
+  static const Color grayText = Color(0x7EFFFFFF);
+  static const Color inputBg = Color(0x0BFFFFFF);
+  static const Color gold = Color(0xFFF0A10D);
 }

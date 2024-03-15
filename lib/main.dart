@@ -1,3 +1,4 @@
+import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:break_arcade/components/main_screen.dart';
 import 'package:break_arcade/auth/login.dart';
@@ -15,7 +16,13 @@ class MyApp extends StatelessWidget {
       onTap: () {
         FocusScope.of(context).requestFocus(FocusNode());
       },
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            backgroundColor:  AppColors.primaryBg,
+            elevation: 0.0,
+          ),
+        ),
         title: 'Break Arcade',
         debugShowCheckedModeBanner: false,
         home: LoginScreen(),

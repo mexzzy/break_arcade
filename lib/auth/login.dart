@@ -1,7 +1,8 @@
 import 'package:break_arcade/auth/components/button.dart';
 import 'package:break_arcade/auth/components/social_icon.dart';
+import 'package:break_arcade/components/custom_snack_bar.dart';
 import 'package:break_arcade/components/pending.dart';
-import 'package:break_arcade/auth/signUp.dart';
+import 'package:break_arcade/auth/sign_up.dart';
 import 'package:break_arcade/components/main_screen.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,14 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _obscureText = true;
+
+  void showLoginSuccess(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      CustomSnackBar(
+        message: "Successfully Logged in!",
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -142,6 +151,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         builder: (context) => const MainScreen(),
                       ),
                     );
+                    // ignore: use_build_context_synchronously
+                    showLoginSuccess(context);
                   },
                 ),
                 const SizedBox(height: 40),

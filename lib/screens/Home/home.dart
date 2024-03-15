@@ -1,10 +1,20 @@
+import 'package:break_arcade/components/custom_snack_bar.dart';
 import 'package:break_arcade/components/frosted_glass.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:break_arcade/screens/Home/components/activity.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  void showCopySnackBar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      CustomSnackBar(
+        message: "Username copied to clipboard!",
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +28,17 @@ class HomeScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 2.2,
             child: Stack(
               children: [
-                Image.asset(
-                  "assets/profile_backdrop.png",
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                  child: Image.asset(
+                    "assets/profile_backdrop.png",
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 Container(
                   width: double.infinity,
@@ -38,11 +54,14 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          "assets/userAvatar.png",
-                          width: 200,
-                          height: 200,
-                          fit: BoxFit.cover,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            "assets/userAvatar.png",
+                            width: 200,
+                            height: 200,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         const SizedBox(
                           height: 10,
@@ -56,23 +75,41 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 10,
-                          ),
+                          width: MediaQuery.of(context).size.height / 5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(
                               24,
                             ),
                             color: AppColors.primaryBlueD1,
                           ),
-                          child: const Text(
-                            "@Mexzy",
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                            ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "@Mexzy",
+                                style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.copy),
+                                iconSize: 20.0,
+                                color: AppColors.white,
+                                onPressed: () async {
+                                  await Clipboard.setData(
+                                    const ClipboardData(text: "@Mexzy"),
+                                  );
+                                  // ignore: use_build_context_synchronously
+                                  showCopySnackBar(context);
+                                },
+                              )
+                            ],
                           ),
                         ),
                       ],
@@ -181,9 +218,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Activity(
                       image: 'assets/amongUs.jpeg',
-                      time: '30',
+                      time: '43',
                       gameName: "Among Us",
-                      progressOf: '67',
+                      progressOf: '24',
                       progressOver: '100',
                     ),
                     SizedBox(
@@ -191,7 +228,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Activity(
                       image: 'assets/rangnarok.jpeg',
-                      time: '30',
+                      time: '32',
                       gameName: "Rangnarok",
                       progressOf: '67',
                       progressOver: '100',
@@ -210,16 +247,15 @@ class HomeScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Activity(
-                      image: 'assets/smashHit.png',
-                      time: '30',
+                      image: 'assets/smashHit.jpg',
+                      time: '16',
                       gameName: "Smash Hit",
-                      progressOf: '67',
+                      progressOf: '55',
                       progressOver: '100',
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                   
                   ],
                 ),
               ),
