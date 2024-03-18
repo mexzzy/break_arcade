@@ -10,3 +10,41 @@ class AppColors {
   static const Color inputBg = Color(0x0BFFFFFF);
   static const Color gold = Color(0xFFF0A10D);
 }
+
+// SizedBox(height: 20),
+//                     SingleFriend(
+//                       image: 'assets/smashHit.jpg',
+//                       username: 'Femi',
+//                       isOnline: false,
+//                     ),
+//                     SizedBox(height: 20),
+//                     SingleFriend(
+//                       image: 'assets/snakeGame.png',
+//                       username: 'Oye',
+//                     ),
+//                     SizedBox(height: 20),
+//                     SingleFriend(
+//                       image: 'assets/rangnarok.jpeg',
+//                       username: 'Joseph',
+//                     ),
+//                     SizedBox(height: 20),
+//                     SingleFriend(
+//                       image: 'assets/amongUs.jpeg',
+//                       username: 'Ebuka',
+//                     ),
+//                     SizedBox(height: 20),
+//                     SingleFriend(
+//                       image: 'assets/smashHit.jpg',
+//                       username: 'Daniel',
+//                       isOnline: false,
+//                     ),
+//                     SizedBox(height: 20),
+//                     SingleFriend(
+//                       image: 'assets/snakeGame.png',
+//                       username: 'Benedict',
+//                     ),
+//                     SizedBox(height: 20),
+//                     SingleFriend(
+//                       image: 'assets/rangnarok.jpeg',
+//                       username: 'Favour',
+//                     ),

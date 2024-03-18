@@ -1,14 +1,14 @@
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class Activity extends StatelessWidget {
+class ProfileActivity extends StatelessWidget {
   final String image;
   final String time;
   final String gameName;
   final String progressOf;
   final String progressOver;
 
-  const Activity({
+  const ProfileActivity({
     super.key,
     required this.image,
     required this.time,
@@ -29,8 +29,8 @@ class Activity extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             child: Image.asset(
               image,
-              width: 70,
-              height: 70,
+              width: 60,
+              height: 60,
               fit: BoxFit.cover,
             ),
           ),
@@ -47,20 +47,26 @@ class Activity extends StatelessWidget {
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
                     color: AppColors.grayText,
+                    decoration: TextDecoration.none,
                   ),
                 ),
                 Text(
                   gameName,
                   style: const TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     color: AppColors.white,
+                    decoration: TextDecoration.none,
                   ),
                 ),
+                const SizedBox(height: 5),
                 Text(
                   'Achievement Progress $progressOf of $progressOver',
                   style: const TextStyle(
+                    fontSize: 13,
                     color: AppColors.white,
+                    fontWeight: FontWeight.w400,
+                    decoration: TextDecoration.none,
                   ),
                 ),
                 const SizedBox(height: 5),

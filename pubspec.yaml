@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   icon_forest: ^1.1.8
   get: ^4.6.1
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -73,10 +74,10 @@ flutter:
     - assets/medal_profile.png
     - assets/userAvatar.png
     - assets/amongUs.jpeg
-    - assets/emailSent.jpeg
     - assets/rangnarok.jpeg
     - assets/smashHit.jpg
     - assets/snakeGame.png
+    - assets/backdrop.jpg
     - assets/empty.webp
     - assets/default_profile_photo.png
 

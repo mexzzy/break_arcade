@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
-            backgroundColor:  AppColors.primaryBg,
+            backgroundColor: AppColors.primaryBg,
             elevation: 0.0,
           ),
         ),
         title: 'Break Arcade',
         debugShowCheckedModeBanner: false,
-        home: LoginScreen(),
+        home: const LoginScreen(),
         // home: MainScreen(),
       ),
     );

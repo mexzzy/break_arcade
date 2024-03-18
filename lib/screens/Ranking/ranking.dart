@@ -29,11 +29,8 @@ class RankingScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const CustomSearchBar(
+            CustomSearchBar(
               hintText: "Search player",
-            ),
-            const SizedBox(
-              height: 30,
             ),
             Expanded(
               flex: 1,
@@ -59,18 +56,12 @@ class RankingScreen extends StatelessWidget {
                             username: 'Blessing',
                             textColor: AppColors.gold,
                           ),
-                          SizedBox(
-                            height: 30,
-                          ),
                           Ranks(
                             itemNumber: "2",
                             rankNumber: '656',
                             image: 'assets/snakeGame.png',
                             username: 'Charly',
                             textColor: AppColors.gold,
-                          ),
-                          SizedBox(
-                            height: 30,
                           ),
                           Ranks(
                             itemNumber: "3",
@@ -79,23 +70,15 @@ class RankingScreen extends StatelessWidget {
                             username: 'Shed_i',
                             textColor: AppColors.gold,
                           ),
-                          SizedBox(
-                            height: 30,
-                          ),
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
+                    const SizedBox(height: 30),
                     const Ranks(
                       itemNumber: "4",
                       rankNumber: '566',
                       image: 'assets/rangnarok.jpeg',
                       username: 'Maxwell',
-                    ),
-                    const SizedBox(
-                      height: 30,
                     ),
                     const Ranks(
                       itemNumber: "5",
@@ -103,17 +86,11 @@ class RankingScreen extends StatelessWidget {
                       image: 'assets/snakeGame.png',
                       username: 'Vibrant',
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
                     const Ranks(
                       itemNumber: "6",
                       rankNumber: '300',
                       image: 'assets/amongUs.jpeg',
                       username: 'Ronnie_',
-                    ),
-                    const SizedBox(
-                      height: 30,
                     ),
                   ],
                 ),

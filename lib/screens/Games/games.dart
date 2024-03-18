@@ -1,3 +1,4 @@
+import 'package:break_arcade/components/search_bar.dart';
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,13 @@ class GamesScreen extends StatelessWidget {
         ),
       ),
       body: Container(
-        child: Text("game"),
+        padding: const EdgeInsets.only(
+          left: 20,
+          right: 20,
+        ),
+        child: CustomSearchBar(
+          hintText: "Search games",
+        ),
       ),
     );
   }

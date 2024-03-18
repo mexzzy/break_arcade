@@ -23,7 +23,7 @@ class FrostedGlass extends StatelessWidget {
       child: Container(
         width: theWidth,
         height: theHeight,
-        color:Color(0x49343434),
+        color:const Color(0x49343434),
         padding: thePadding,
         child: Stack(
           children: [

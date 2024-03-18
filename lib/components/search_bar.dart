@@ -7,13 +7,13 @@ class CustomSearchBar extends StatefulWidget {
   final bool hasImage;
   final String imageUrl;
 
-  const CustomSearchBar({
-    super.key,
+  CustomSearchBar({
+    Key? key,
     required this.hintText,
     this.showFilterIcon = false,
     this.hasImage = false,
     this.imageUrl = "",
-  });
+  }) : super(key: key);
 
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
@@ -27,7 +27,11 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 10,
+        bottom: 20,
+      ),
       // child: Row(
       //   children: [
       //     if (widget.hasImage)
@@ -42,7 +46,6 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
       //       ),
       //     const SizedBox(width: 10),
       child: Container(
-        padding: const EdgeInsets.all(3),
         decoration: const BoxDecoration(
           color: AppColors.inputBg,
           borderRadius: BorderRadius.all(

@@ -1,44 +1,28 @@
 import 'package:break_arcade/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class Ranks extends StatelessWidget {
-  final String username;
-  final String rankNumber;
+class SingleFriend extends StatelessWidget {
   final String image;
-  final String itemNumber;
-  final Color textColor;
+  final String username;
+  final bool isOnline;
 
-  const Ranks({
-    required this.itemNumber,
+  const SingleFriend({
     super.key,
-    required this.username,
-    required this.rankNumber,
     required this.image,
-    this.textColor = AppColors.grayText,
+    required this.username,
+    this.isOnline = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(
-        left: 15,
-        right: 15,
-      ),
       margin: const EdgeInsets.only(
-        bottom: 30,
+        bottom: 20,
       ),
       child: Row(
         children: [
-          Text(
-            itemNumber,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: textColor,
-            ),
-          ),
           const SizedBox(
-            width: 20,
+            width: 10,
           ),
           ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
@@ -63,7 +47,7 @@ class Ranks extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color:AppColors.white,
+                        color: AppColors.white,
                       ),
                     ),
                     const SizedBox(
@@ -73,7 +57,7 @@ class Ranks extends StatelessWidget {
                       height: 8,
                       width: 8,
                       decoration: BoxDecoration(
-                        color: Colors.green,
+                        color: isOnline ? Colors.green : Colors.red,
                         borderRadius: BorderRadius.circular(5),
                       ),
                     ),
@@ -85,30 +69,6 @@ class Ranks extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                     color: AppColors.grayText,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Icon(
-                  Icons.emoji_events,
-                  color: AppColors.gold,
-                  size: 25,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  rankNumber,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.gold,
                   ),
                 ),
               ],

@@ -33,13 +33,13 @@ class _EmailVerificationState extends State<EmailVerification> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/mail_open_outline_filled.png',
+                'assets/breakArcade_logo.png',
                 height: 70,
                 width: 70,
                 fit: BoxFit.cover,
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 10.0),
+                padding: EdgeInsets.only(top: 5.0),
                 child: Text(
                   'Verify Your Email',
                   style: TextStyle(
